@@ -1,12 +1,5 @@
-#include<bits/stdc++.h>
-using namespace std;
-
-
 // TC = o(n+v)
 // SC = visited + recursive stack + constant = o(n) + o(n) +o(1) = o(n)
-
-void dfs_inside_recursive(vector<int> adjL[], bool visited[], int s);
-void dfs_inside_iterative(vector<int> adjL[], bool visited[], int s, int);
 
 void dfs(vector<int> adjL[], int n, int s){
 	bool visited[n+1] = {0};
@@ -45,23 +38,4 @@ void dfs_inside_iterative(vector<int> adjL[], bool visited[], int s, int n){
 			}
 		}
 	}
-}
-
-int main() {
-    int n, v;
-    cin>>n>>v;
-    vector<int> adjL[n+1];
-
-    for(int i=0;i<v;i++){
-    	int s, d;
-    	cin>>s>>d;
-    	adjL[s].push_back(d);
-    	adjL[d].push_back(s);
-    }
-
-    dfs(adjL, n, 1);
-
-
-
-    return 0;
 }

@@ -1,7 +1,3 @@
-#include<bits/stdc++.h>
-using namespace std;
-
-
 /*
 	BFS - Breadth First Search - visit neighbours first then move forward
 	here I used queue (fcfs) that means we will do operations with the one who entered first 
@@ -35,36 +31,3 @@ void bfs(vector<int> adjL[], int s, int n){ // here o(n+v) is the time complexit
 		}
 	}
 }
-
-
-int main() {
-	cout<<"Graph: BFS"<<endl;
-	int n, v;
-	cin>>n>>v;
-	vector<int> a;
-	vector<int> adjL[n+1];
-	for (int i = 0; i < v; ++i)
-	{
-		int s, d;
-		cin>>s>>d;
-		adjL[s].push_back(d);
-		adjL[d].push_back(s);
-	}
-
-	for (int i = 1; i < n+1; ++i)
-	{
-		cout<<i<<" -> ";
-		for (int j = 0; j < adjL[i].size(); ++j)
-		{
-			cout<<adjL[i][j]<<" ";
-		}
-		cout<<endl;
-	}
-
-	bfs(adjL, 1, n);
-
-
-
-
-    return 0;
-}	
