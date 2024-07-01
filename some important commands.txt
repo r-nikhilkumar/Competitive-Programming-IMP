@@ -1,0 +1,3 @@
+my stdc++.h location - C:\Program Files\MinGW\include\c++\9.2.0\x86_64-w64-mingw32\bits
+
+pre-compilation command to reduce compile time - g++ -std=c++14 stdc++.h
