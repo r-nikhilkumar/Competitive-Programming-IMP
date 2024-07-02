@@ -3,11 +3,21 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+void solve(){
+    ${1:}
+}
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    ${1:}
+    int t;
+    cin>>t;
+
+    while(t--){
+        solve();
+        ${2:}
+    }
 
 
 

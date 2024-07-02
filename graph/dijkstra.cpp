@@ -1,3 +1,6 @@
+#include<bits/stdc++.h>
+using namespace std;
+
 vector<int> dijkstra_pq(vector<pair<int, int>> adjL[], int s, int n, bool visited[]){
 	vector<int> dist(n+1, INT_MAX);
 	priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int,int>>> pq;
@@ -38,6 +41,52 @@ vector<int> dijkstra_set(vector<pair<int, int>> adjL[], int s, int n, bool visit
 	}
 	return dist;
 }
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int n, v;
+    cin>>n>>v;
+
+    vector<pair<int, int>> adjL[n+1];
+    for (int i = 0; i < v; ++i)
+    {
+    	int s, d, w;
+    	cin>>s>>d>>w;
+    	adjL[s].push_back({d, w});
+    }
+    bool visited[n+1] = {0};
+    // int ans=-1;
+    // for (int i = 1; i <= n; ++i)
+    // {
+    // 	if(!visited[i] && ans==-1){
+    // 		ans = dijkstra(adjL, i, n, visited);
+    // 	}	
+    // }
+    auto ans = dijkstra_pq(adjL, 1, n, visited);
+
+    cout<<"minimum distance: pq: "<<endl;
+    for (int i = 1; i <= n; ++i)
+    {
+    	cout<<ans[i]<<" ";
+    }
+    cout<<endl;
+
+    memset(visited, 0, sizeof(visited));
+
+    auto ans2 = dijkstra_set(adjL, 1, n, visited);
+
+    cout<<"minimum distance: set: "<<endl;
+    for (int i = 1; i <= n; ++i)
+    {
+    	cout<<ans2[i]<<" ";
+    }
+
+
+    return 0;
+}
+
 
 
 /*
